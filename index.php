@@ -17,7 +17,38 @@ function start(){
       showLogin();
     }
   }else{
-    showSubmit();
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){ //Insert in db
+      if(isset($_POST["username"])){
+        $username = $_POST["username"];
+        $items = $_POST["items"];
+
+        $host = "fall-2016.cs.utexas.edu";
+        $user = "minhtri";
+        $pwd = "EGmf5_qbe1";
+        $dbs = "cs329e_minhtri";
+        $port = "3306";
+
+        $connect = mysqli_connect ($host, $user, $pwd, $dbs, $port);
+
+        if (empty($connect))
+        {
+          die("mysqli_connect failed: " . mysqli_connect_error());
+        }
+
+        print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
+
+        $table = "final";
+
+        if($username != "" && $items != ""){
+          $stmt = mysqli_prepare ($connect, "INSERT INTO $table VALUES (?, ?)");
+          mysqli_stmt_bind_param ($stmt, 'ss', $username, $items);
+          mysqli_stmt_execute($stmt);
+          mysqli_stmt_close($stmt);
+        }
+      }
+    }else{
+      showSubmit();
+    }
   }
 
 
@@ -37,7 +68,7 @@ function showSubmit(){
       </tr>
       <tr>
         <td>
-          <input type="text" id="user" name="user" />
+          <input type="text" id="username" name="username" />
         </td>
         <td>
           <input type="text" id="items" name="items" />
@@ -51,6 +82,41 @@ function showSubmit(){
           <input type="reset" name="reset" />
         </td>
       </tr>
+      <?php
+        $username = $_POST["username"];
+        $items = $_POST["items"];
+
+        $host = "fall-2016.cs.utexas.edu";
+        $user = "minhtri";
+        $pwd = "EGmf5_qbe1";
+        $dbs = "cs329e_minhtri";
+        $port = "3306";
+
+        $connect = mysqli_connect ($host, $user, $pwd, $dbs, $port);
+
+        if (empty($connect))
+        {
+          die("mysqli_connect failed: " . mysqli_connect_error());
+        }
+
+        print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
+
+        $table = "final";
+        $result = mysqli_query($connect, "SELECT * from $table");
+        while($row = $result->fetch_row()){
+          ?>
+          <tr>
+            <td>
+              <?php echo $row[0]; ?>
+            </td>
+            <td>
+              <?php echo $row[1]; ?>
+            </td>
+          </tr>
+          <?php
+        }
+        $result->free();
+      ?>
     </table>
   </form>
   <?php
