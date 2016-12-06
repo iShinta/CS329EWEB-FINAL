@@ -8,6 +8,12 @@ function start(){
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        $key = 'CS329';
+        $method = 'aes-128-cbc';
+
+        $cipher_text = openssl_encrypt ($password, $method, $key);
+        echo $cipher_text;
+
         if($username == "guest" && $password == "dinner"){
           setcookie("id", $username, time()+3600);
           setcookie("timeloggedin", time(), time()+3600);
@@ -35,7 +41,7 @@ function start(){
           die("mysqli_connect failed: " . mysqli_connect_error());
         }
 
-        print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
+        //print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
 
         $table = "final";
 
@@ -45,6 +51,7 @@ function start(){
           mysqli_stmt_execute($stmt);
           mysqli_stmt_close($stmt);
         }
+        echo "<p>Thank you!</p>";
       }
     }else{
       showSubmit();
@@ -99,7 +106,7 @@ function showSubmit(){
           die("mysqli_connect failed: " . mysqli_connect_error());
         }
 
-        print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
+        //print "Connected to ". mysqli_get_host_info($connect) . "<br /><br />\n";
 
         $table = "final";
         $result = mysqli_query($connect, "SELECT * from $table");
