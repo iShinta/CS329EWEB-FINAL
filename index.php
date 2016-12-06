@@ -144,7 +144,7 @@ function showLogin(){
       </tr>
       <tr>
         <td>
-          Items:
+          Password:
         </td>
         <td>
           <input type="text" id="password" name="password" />
