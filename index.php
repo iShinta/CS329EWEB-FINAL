@@ -57,6 +57,7 @@ public showSubmit(){
 }
 
 public showLogin(){
+  ?>
   <form>
     <table style="margin: auto; background-color: lightgrey;">
       <tr>
@@ -85,6 +86,7 @@ public showLogin(){
       </tr>
     </table>
   </form>
+  <?php
 }
 ?>
 
