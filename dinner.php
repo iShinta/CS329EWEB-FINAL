@@ -91,7 +91,7 @@ function showSubmit(){
       </tr>
       <tr>
         <td>
-          <input type="submit" id="submit" name="submit" />
+          <input type="submit" id="submit" name="submit" disabled="true" />
         </td>
         <td>
           <input type="reset" name="reset" />
