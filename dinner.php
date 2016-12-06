@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<html>
+<head>
+  <title>Potluck Dinner</title>
+  <link rel="stylesheet" type="text/css" href="dinner.css" />
+  <script src="dinner.js"></script>
+</head>
+
 <?php
 function start(){
   if(!isset($_COOKIE["id"])){
@@ -164,14 +171,7 @@ function showLogin(){
 }
 ?>
 
-<html>
-<head>
-  <title>Potluck Dinner</title>
-  <link rel="stylesheet" type="text/css" href="dinner.css" />
-  <script src="dinner.js"></script>
-</head>
-
-<body style="background-color: darkgrey;">
+<body class="main_body">
   <?php start(); ?>
 </body>
 </html>
