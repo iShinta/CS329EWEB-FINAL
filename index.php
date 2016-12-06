@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+public start(){
+  echo "hello";
+
+
+}
+
+?>
 
 <html>
 <head>
@@ -8,6 +16,6 @@
 </head>
 
 <body style="background-color: darkgrey;">
-  <?php echo "hello"; ?>
+  <?php start(); ?>
 </body>
 </html>
