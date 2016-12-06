@@ -65,7 +65,7 @@ function start(){
 function showSubmit(){
   ?>
   <form method="post">
-    <table style="margin: auto; background-color: lightgrey;">
+    <table class="main_table">
       <tr>
         <td>
           Name:
@@ -79,12 +79,12 @@ function showSubmit(){
           <input type="text" id="username" name="username" />
         </td>
         <td>
-          <input type="text" id="items" name="items" maxlength="100" />
+          <input type="text" id="items" name="items" maxlength="100" onkeyup="checkItems(this.value)" />
         </td>
       </tr>
       <tr>
         <td>
-          <input type="submit" name="submit" />
+          <input type="submit" id="submit" name="submit" />
         </td>
         <td>
           <input type="reset" name="reset" />
@@ -167,6 +167,7 @@ function showLogin(){
 <html>
 <head>
   <title>Potluck Dinner</title>
+  <link rel="stylesheet" type="text/css" href="dinner.css" />
   <script src="dinner.js"></script>
 </head>
 
