@@ -12,12 +12,13 @@ function start(){
         $method = 'aes-128-cbc';
 
         $cipher_text = openssl_encrypt ($password, $method, $key);
-        echo $cipher_text;
 
-        if($username == "guest" && $password == "dinner"){
+        if($username == "guest" && $cipher_text == "hQDYoS65GjgMhWIlyamyfQ=="){
           setcookie("id", $username, time()+3600);
           setcookie("timeloggedin", time(), time()+3600);
         }
+
+        showSubmit();
       }
     }else{
       showLogin();
@@ -78,7 +79,7 @@ function showSubmit(){
           <input type="text" id="username" name="username" />
         </td>
         <td>
-          <input type="text" id="items" name="items" />
+          <input type="text" id="items" name="items" maxlength="100" />
         </td>
       </tr>
       <tr>
