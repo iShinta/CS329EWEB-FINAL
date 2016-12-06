@@ -172,6 +172,7 @@ function showLogin(){
 ?>
 
 <body class="main_body">
+  <h1>Potluck Dinner</h1>
   <?php start(); ?>
 </body>
 </html>
