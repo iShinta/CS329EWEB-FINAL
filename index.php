@@ -2,9 +2,7 @@
 
 <?php
 public start(){
-  if(!isset($_COOKIE["id"])){
-    echo "hello";
-  }
+  echo "hello";
 
 
 }
