@@ -25,7 +25,7 @@ function start(){
 
 function showSubmit(){
   ?>
-  <form>
+  <form method="post">
     <table style="margin: auto; background-color: lightgrey;">
       <tr>
         <td>
@@ -58,7 +58,7 @@ function showSubmit(){
 
 function showLogin(){
   ?>
-  <form>
+  <form method="post">
     <table style="margin: auto; background-color: lightgrey;">
       <tr>
         <td>
