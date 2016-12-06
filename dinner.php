@@ -59,7 +59,7 @@ function start(){
           mysqli_stmt_execute($stmt);
           mysqli_stmt_close($stmt);
         }
-        echo "<p>Thank you!</p>";
+        echo "<h1>Thank you!</h1>";
       }
     }else{
       showSubmit();
