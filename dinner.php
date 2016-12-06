@@ -23,9 +23,11 @@ function start(){
         if($username == "guest" && $cipher_text == "hQDYoS65GjgMhWIlyamyfQ=="){
           setcookie("id", $username, time()+3600);
           setcookie("timeloggedin", time(), time()+3600);
+          showSubmit();
+        }else{
+          echo "Bad authentication.";
+          <p><a href="dinner.php"> Back to the mainpage </a></p>
         }
-
-        showSubmit();
       }
     }else{
       showLogin();
@@ -60,6 +62,7 @@ function start(){
           mysqli_stmt_close($stmt);
         }
         echo "<h1>Thank you!</h1>";
+        <p><a href="dinner.php"> Back to the mainpage </a></p>
       }
     }else{
       showSubmit();
