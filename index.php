@@ -56,7 +56,7 @@ function showSubmit(){
   <?php
 }
 
-public showLogin(){
+function showLogin(){
   ?>
   <form>
     <table style="margin: auto; background-color: lightgrey;">
