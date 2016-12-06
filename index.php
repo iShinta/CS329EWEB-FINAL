@@ -13,9 +13,7 @@ public start(){
           setcookie("timeloggedin", time(), time()+3600);
         }
       }
-    }else{
     }
-  }else{
   }
 
 
