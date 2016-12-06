@@ -83,10 +83,10 @@ function showSubmit(){
       </tr>
       <tr>
         <td>
-          <input type="text" id="username" name="username" />
+          <input type="text" id="username" name="username" maxlength="20" onkeyup="checkItems()" />
         </td>
         <td>
-          <input type="text" id="items" name="items" maxlength="100" onkeyup="checkItems(this.value)" />
+          <input type="text" id="items" name="items" maxlength="100" onkeyup="checkItems()" />
         </td>
       </tr>
       <tr>
@@ -154,7 +154,7 @@ function showLogin(){
           Password:
         </td>
         <td>
-          <input type="text" id="password" name="password" />
+          <input type="password" id="password" name="password" />
         </td>
       </tr>
       <tr>
