@@ -24,9 +24,9 @@ function start(){
           setcookie("id", $username, time()+3600);
           setcookie("timeloggedin", time(), time()+3600);
           showSubmit();
-        }else{
-          echo "Bad authentication."; ?>
-          <p><a href="dinner.php"> Back to the mainpage </a></p>
+        }else{ ?>
+          <p style="text-align:center;">Bad authentication</div>
+          <p style="text-align:center;"><a href="dinner.php"> Back to the mainpage </a></p>
           <?php
         }
       }
@@ -64,7 +64,7 @@ function start(){
         }
         echo "<h1>Thank you!</h1>";
         ?>
-        <p><a href="dinner.php"> Back to the mainpage </a></p>
+        <p style="text-align: center;"><a href="dinner.php"> Back to the mainpage </a></p>
         <?php
       }
     }else{
