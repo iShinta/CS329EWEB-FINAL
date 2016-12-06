@@ -25,8 +25,9 @@ function start(){
           setcookie("timeloggedin", time(), time()+3600);
           showSubmit();
         }else{
-          echo "Bad authentication.";
+          echo "Bad authentication."; ?>
           <p><a href="dinner.php"> Back to the mainpage </a></p>
+          <?php
         }
       }
     }else{
@@ -62,7 +63,9 @@ function start(){
           mysqli_stmt_close($stmt);
         }
         echo "<h1>Thank you!</h1>";
+        ?>
         <p><a href="dinner.php"> Back to the mainpage </a></p>
+        <?php
       }
     }else{
       showSubmit();
